@@ -20,8 +20,9 @@ public class GameLogic {
      * @return a String representing the computer's choice
      */
     public String getComputerChoice() {
-        
-        return "";
+        String[] choices = {"rock", "paper", "scissors"};
+        int randomIndex = (int) (Math.random() * choices.length);
+        return choices[randomIndex];
     }
 
     /**
@@ -31,8 +32,15 @@ public class GameLogic {
      * @return A string containing the computer choice, user choice, and the result of the game.
      */
     public String determineWinner(String predictedClass, String computerChoice) {
-        
-        return "";
+        if (predictedClass.equals(computerChoice)) {
+            return "Computer choice: " + computerChoice + ", User choice: " + predictedClass + ", Result: Tie";
+        } else if ((predictedClass.equals("rock") && computerChoice.equals("scissors")) ||
+                (predictedClass.equals("paper") && computerChoice.equals("rock")) ||
+                (predictedClass.equals("scissors") && computerChoice.equals("paper"))) {
+            return "Computer choice: " + computerChoice + ", User choice: " + predictedClass + ", Result: User wins";
+        } else {
+            return "Computer choice: " + computerChoice + ", User choice: " + predictedClass + ", Result: Computer wins";
+        }
     }
 
     /**
@@ -42,8 +50,8 @@ public class GameLogic {
      * @return A string indicating a tie result.
      */
     public String getTieResult() {
-        
-        return "";
+        gameOver = true;
+        return "Result: Tie";
     }
 
     /**
@@ -52,10 +60,10 @@ public class GameLogic {
      * 
      * @return a string indicating that the user has won
      */
-    public String getUserWinnerResult() {
-        
-        return "";
-    }
+    public void getUserWinnerResult() {
+    gameOver = true;
+    System.out.println("Result: User wins");
+}
 
     /**
      * Sets the game over flag to true and returns a string
@@ -63,10 +71,11 @@ public class GameLogic {
      * 
      * @return A string indicating that the player has lost.
      */
-    public String getComputerWinnerResult() {
-        
-        return "";
-    }
+    public void getComputerWinnerResult() {
+    gameOver = true;
+    System.out.println("Result: Computer wins");
+}
+    
 
     /**
      * Returns whether the game is over or not.
@@ -85,3 +94,4 @@ public class GameLogic {
     }
 
 }
+

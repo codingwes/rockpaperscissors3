@@ -8,6 +8,7 @@
             "mainClass": "com.codedotorg.App",
             "projectName": "rockpaperscissors",
             "preLaunchTask": "Run Rock, Paper, Scissors Game",
+            "vmArgs": "--module-path C:\\Users\\spars\\Music\\Desktop\\Code\\javafx-sdk-22.0.1\\lib --add-modules javafx.controls,javafx.fxml",
             "args": []
         }
     ]
